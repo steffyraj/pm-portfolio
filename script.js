@@ -45,6 +45,12 @@ navToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
+navItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+
 function updateActiveNav() {
   const scrollPos = window.scrollY + 140;
   let activeIndex = 0;
@@ -122,14 +128,20 @@ function sparkleBurst(x, y) {
 
 copyEmailBtn.addEventListener("click", (event) => {
   const email = "steffyrajsoni@gmail.com";
-  navigator.clipboard.writeText(email).then(() => {
-    const rect = event.target.getBoundingClientRect();
+  const rect = event.target.getBoundingClientRect();
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(() => {
+      sparkleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    });
+  } else {
     sparkleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2);
-    copyEmailBtn.textContent = "Copied!";
-    setTimeout(() => {
-      copyEmailBtn.textContent = "Copy email";
-    }, 1200);
-  });
+  }
+
+  copyEmailBtn.textContent = "Copied!";
+  setTimeout(() => {
+    copyEmailBtn.textContent = "Copy email";
+  }, 1200);
 });
 
 const konami = [
