@@ -55,7 +55,7 @@ a {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -197,6 +197,39 @@ h2 {
   font-size: 12px;
 }
 
+.xp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.xp-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.xp-bar {
+  flex: 1;
+  height: 10px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.xp-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.xp-level {
+  font-size: 12px;
+  color: var(--muted);
+}
+
 .sticky-note {
   background: #fff6b5;
   border: 1px solid #f5d97a;
@@ -252,6 +285,38 @@ h2 {
   color: var(--muted);
 }
 
+.impact-snapshot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.impact-snapshot div {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+}
+
+.stat {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -296,6 +361,21 @@ h2 {
   color: var(--accent);
 }
 
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.tool-card {
+  padding: 16px;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
 .timeline-item {
   margin-bottom: 28px;
 }
@@ -311,6 +391,17 @@ h2 {
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .form-row {
@@ -375,7 +466,7 @@ textarea {
   border: 4px solid var(--accent-2);
 }
 
-@media (max-width: 840px) {
+@media (max-width: 900px) {
   .hero-grid,
   .about-grid {
     grid-template-columns: 1fr;
@@ -408,5 +499,10 @@ textarea {
 
   h1 {
     font-size: 34px;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
